@@ -3,10 +3,131 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <!-- Additional CSS must be placed after Bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fortawesome/fontawesome-free/css/fontawesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fortawesome/fontawesome-free/css/brands.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fortawesome/fontawesome-free/css/solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans"
+    />
+
     <title>Currency Converter</title>
   </head>
+
   <body>
-    <h1>Currency Converter</h1>
-    <script src=""></script>
+    <!--header-->
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-4 col-sm-3 col-md-2 align-self-center">
+            <h1>Currency Converter</h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--navbar-->
+    <nav class="navbar navbar-expand-sm navbar-dark sticky-top"></nav>
+
+    <!--conversion form option 1-->
+    <div class="container">
+      <h3>Type in the amount and choose the starting and ending currency.</h3>
+      <p>Note: This is an estimate based on current rates.</p>
+
+      <form>
+        <input id="amount" type="number" value="1" />
+        <select id="primary" class="input"></select>
+        <select id="secondary" class="input"></select>
+        <input id="btn-convert" type="button" value="Convert" />
+      </form>
+      <p id="result" style="display: none">
+        <span id="txt-primary"></span>
+        <span id="txt-secondary"></span>
+      </p>
+    </div>
+
+    <br />
+    <br />
+
+    <!--conversion form option 2-->
+    <div class="container">
+      <form>
+        <label>From:</label>
+        <select id="from">
+          <option value="USD">USD</option>
+          <option value="CAD">CAD</option>
+          <option value="GBP">GBP</option>
+          <option value="EUR">EUR</option>
+          <option value="CYN">CYN</option>
+          <option value="MXN">MXN</option>
+          <option value="JPY">JPY</option>
+          <option value="RUB">RUB</option>
+          <option value="INR">INR</option>
+          <option value="SEK">SEK</option>
+        </select>
+        <label>To:</label>
+        <select id="to">
+          <option value="USD">USD</option>
+          <option value="CAD">CAD</option>
+          <option value="GBP">GBP</option>
+          <option value="EUR">EUR</option>
+          <option value="CYN">CYN</option>
+          <option value="MXN">MXN</option>
+          <option value="JPY">JPY</option>
+          <option value="RUB">RUB</option>
+          <option value="INR">INR</option>
+          <option value="SEK">SEK</option>
+        </select>
+        <label> Amount: </label>
+        <input type="text" id="amount" />
+        <button type="button" id="convert">Convert</button>
+        <p id="result"></p>
+      </form>
+    </div>
+
+    <script>
+      const currencies = {
+        USD: "United States Dollar",
+        CAD: "Canadian Dollar",
+        GBP: "Great British Pound",
+        EUR: "Euro",
+        CYN: "Chinese Yuan",
+        MXN: "Mexican Peso",
+        JPY: "Japanese Yen",
+        RUB: "Russian Ruble",
+        INR: "Indian Rupee",
+        SEK: "Swedish Krona",
+        // removing FRF - french franc is obsolete
+      };
+
+      const primaryCurrency = document.getElementById("primary");
+      const secondaryCurrency = document.getElementById("secondary");
+      primaryCurrency.innerHTML = getOptions(currencies);
+      secondaryCurrency.innerHTML = getOptions(currences);
+
+      function getOptions(data) {
+        return Object.entries(data)
+          .map(
+            ([country, currency]) =>
+              `<option value="${country}">${country} | ${currency}</option>`
+          )
+          .join("");
+      }
+    </script>
   </body>
 </html>
