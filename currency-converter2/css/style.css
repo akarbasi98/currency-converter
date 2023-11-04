@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,500&display=swap');
+
+
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background-color: white;
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    color: red;
+    font-size: 3rem;
+    
+}
+
+.convert{
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 35px;
+    color: #ffffff;
+    
+}
+
+.label {
+  font-family: 'Sansita Swashed', cursive;
+    font-size: 25px;
+    color: #ffffff;
+}
+
+input {
+  width: 150px;
+  height: 30px;
+  font-size: 20px;
+    margin: 5px auto;
+    outline: 0;
+}
+
+button {
+  width: 250px;
+  height: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    color: darkred;
+    font-family: 'Sansita Swashed', cursive;
+    
+}
+
+select{
+  width: 80px;
+  height: 35px;
+  font-size: 20px;
+  text-align: center;
+  padding-left: 10px;
+  outline: 0;
+}
+
+#result {
+  font-family: 'Roboto Mono', monospace;
+    font-size: 35px;
+    color: #ffffff;
+    padding-top: 15px;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.card {
+    border: 5px solid red;
+    
+}
+
+footer{
+    text-align: center;
+    margin-top: 100px;
+}

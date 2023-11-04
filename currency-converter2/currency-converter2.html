@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Currency Converter</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="card text-white bg-dark d-flex justify-content-center align-items-center">
+      <h1 class="card-title">Currency Converter</h1>
+      <p class="convert">Select Currency and enter Amount to convert.</p>
+      <form>
+        <label class="label">From:</label>
+        <select id="from">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="INR">INR</option>
+          <option value="CNY">CNY</option>
+          <option value="JPY">JPY</option>
+          <option value="RUB">RUB</option>
+          <option value="AED">AED</option>
+          <option value="AUD">AUD</option>
+          <option value="HKD">HKD</option>
+        </select>
+        <label class="label">To:</label>
+        <select id="to">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="INR">INR</option>
+          <option vlaue="CNY">CNY</option>
+          <option value="JPY">JPY</option>
+          <option value="RUB">RUB</option>
+          <option value="AED">AED</option>
+          <option value="AUD">AUD</option>
+          <option value="HKD">HKD</option>
+        </select>
+        <label class="label">Amount:</label>
+        <input type="text" id="amount" /> <br />
+        <button
+          type="button"
+          id="convert"
+          class="justify-content-center align-items-center"
+        >
+          Convert
+        </button>
+        <p id="result"></p>
+      </form>
+      <footer><p class="footer">Creators: Aldo, Nicole, Amir, Dan</p></footer>
+    </div>
+    <script src="js/currency-converter.js"></script>
+  </body>
+</html>
